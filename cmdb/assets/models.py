@@ -266,3 +266,21 @@ class CPU(models.Model):
     class Meta:
         verbose_name = 'CPU'
         verbose_name_plural = "CPU"
+
+class RAM(models.Model):
+    """内存组件"""
+
+    asset = models.ForeignKey('Asset')  # 只能通过外键关联Asset。否则不能同时关联服务器、网络设备等等。
+    sn = models.CharField('SN号', max_length=128, blank=True, null=True)
+    model = models.CharField('内存型号', max_length=128, blank=True, null=True)
+    manufacturer = models.CharField('内存制造商', max_length=128, blank=True, null=True)
+    slot = models.CharField('插槽', max_length=64)
+    capacity = models.IntegerField('内存大小(GB)', blank=True, null=True)
+
+    def __str__(self):
+        return '%s: %s: %s: %s' % (self.asset.name, self.model, self.slot, self.capacity)
+
+    class Meta:
+        verbose_name = '内存'
+        verbose_name_plural = "内存"
+        unique_together = ('asset', 'slot')  # 同一资产下的内存，根据插槽的不同，必须唯一
