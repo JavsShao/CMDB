@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 import json
 import time
 import urllib.parse
@@ -72,3 +75,7 @@ class ArgvHandler(object):
             string = '发送时间：%s \t 服务器地址：%s \t 返回结果：%s \n' % (time.strftime('%Y-%m-%d %H:%M:%S'), url, message)
             f.write(string.encode())
             print("日志记录成功！")
+
+
+
+

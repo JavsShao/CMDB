@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
 import sys
@@ -37,3 +38,5 @@ class InfoCollection(object):
     def build_report_data(self, data):
         # 留下一个接口，方便以后增加功能或者过滤数据
         return data
+
+

@@ -1,10 +1,11 @@
+#!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
 import os
 
 # 远端服务器配置
 Params = {
-    "server": "192.168.31.13",
+    "server": "192.168.1.100",
     "port": 8000,
     'url': '/assets/report/',
     'request_timeout': 30,
@@ -13,3 +14,6 @@ Params = {
 # 日志文件配置
 
 PATH = os.path.join(os.path.dirname(os.getcwd()), 'log', 'cmdb.log')
+
+
+# 更多配置，请都集中在此文件中
